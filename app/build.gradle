@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:25.11.0')
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
 
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -74,6 +74,8 @@ dependencies {
     // Declare the dependency for the Cloud Storage library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-storage-ktx'
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
