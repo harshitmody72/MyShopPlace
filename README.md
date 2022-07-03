@@ -7,7 +7,7 @@
 
 ## Download APK From Here
 
-> [APP](https://github.com/harshitmody72/MyQuizApp/blob/master/app/App/app-debug.apk?raw=true)
+> [APP](https://github.com/harshitmody72/MyShopPlace/blob/master/app/App/app-debug.apk?raw=true)
 > 
 
 ## Preview
