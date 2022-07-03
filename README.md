@@ -2,8 +2,7 @@
 
 * Built a fully functional Android E-Commerce App From Scratch, Using Google Firebase Firestore - NoSQL Database.
 * E-commerce is the future of commerce.
-* It provides a platform where user can easily purchase and Sell.
-* Items on a single Application.
+* It provides a platform where user can easily purchase and sell items on a single Application.
 * Technology used: Kotlin , Android Studio and Firestore database of Google Firebase.
 
 ## Download APK From Here
