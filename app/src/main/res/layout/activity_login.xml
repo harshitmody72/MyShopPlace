@@ -22,6 +22,18 @@
             android:scaleType="fitXY"
             android:src="@drawable/auth_screens_background" />
 
+        <com.myshoppal.utils.MSPTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/splash_title_text_size"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 <!--        <ImageView
             android:layout_width="@dimen/auth_logo_width_size"
             android:layout_height="@dimen/auth_logo_height_size"

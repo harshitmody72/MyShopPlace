@@ -31,18 +31,15 @@ class SoldProductDetailsActivity : BaseActivity() {
                 intent.getParcelableExtra<SoldProduct>(Constants.EXTRA_SOLD_PRODUCT_DETAILS)!!
         }
 
-        // TODO Step 2: Call the function to setup action bar.
         // START
         setupActionBar()
         // END
 
-        // TODO Step 4: Call the function to populate the data in UI.
         // START
         setupUI(productDetails)
         // END
     }
 
-    // TODO Step 1: Create a function to setup action bar.
     // START
     /**
      * A function for actionBar Setup.
@@ -87,7 +84,7 @@ class SoldProductDetailsActivity : BaseActivity() {
             iv_product_item_image
         )
         tv_product_item_name.text = productDetails.title
-        tv_product_item_price.text ="$${productDetails.price}"
+        tv_product_item_price.text ="${productDetails.price} Rs"
         tv_sold_product_quantity.text = productDetails.sold_quantity
 
         tv_sold_details_address_type.text = productDetails.address.type

@@ -2,8 +2,10 @@ package com.myshoppal.ui.activities
 
 import android.content.Intent
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.myshoppal.R
@@ -18,10 +20,15 @@ class SplashActivity : AppCompatActivity() {
 
         // This is used to hide the status bar and make the splash screen as a full screen activity.
         // It is deprecated in the API level 30. I will update you with the alternate solution soon.
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+        @Suppress("DEPRECATION")
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        }else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
 
         // Adding the handler to after the a task after some delay.
         // It is deprecated in the API level 30.
@@ -46,5 +53,10 @@ class SplashActivity : AppCompatActivity() {
             },
             2500
         ) // Here we pass the delay time in milliSeconds after which the splash activity will disappear.
+
+
+        //Without Custom front Text View Classes
+//        val typeface : Typeface = Typeface.createFromAsset(assets,"Montserrat_Bold.ttf")
+//        tv_app_name.typeface = typeface
     }
 }

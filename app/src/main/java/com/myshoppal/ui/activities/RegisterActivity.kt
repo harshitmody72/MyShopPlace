@@ -1,7 +1,9 @@
 package com.myshoppal.ui.activities
 
+import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
@@ -27,10 +29,15 @@ class RegisterActivity : BaseActivity() {
 
         // This is used to hide the status bar and make the splash screen as a full screen activity.
         // It is deprecated in the API level 30. I will update you with the alternate solution soon.
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+        @Suppress("DEPRECATION")
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        }else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
 
         setupActionBar()
 
@@ -152,7 +159,7 @@ class RegisterActivity : BaseActivity() {
 
                             // Pass the required values in the constructor.
                             FirestoreClass().registerUser(this@RegisterActivity, user)
-                        } else {
+                         } else {
 
                             // Hide the progress dialog
                             hideProgressDialog()

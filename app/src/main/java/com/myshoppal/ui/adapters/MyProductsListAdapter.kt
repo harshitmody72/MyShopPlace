@@ -57,7 +57,7 @@ open class MyProductsListAdapter(
             GlideLoader(context).loadProductPicture(model.image, holder.itemView.iv_item_image)
 
             holder.itemView.tv_item_name.text = model.title
-            holder.itemView.tv_item_price.text = "$${model.price}"
+            holder.itemView.tv_item_price.text = "${model.price} Rs"
 
             holder.itemView.ib_delete_product.setOnClickListener {
 

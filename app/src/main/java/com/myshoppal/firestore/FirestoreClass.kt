@@ -790,7 +790,7 @@ class FirestoreClass {
         for (cart in cartList) {
 
             val soldProduct = SoldProduct(
-                FirestoreClass().getCurrentUserID(),
+                cart.product_owner_id,
                 cart.title,
                 cart.price,
                 cart.cart_quantity,

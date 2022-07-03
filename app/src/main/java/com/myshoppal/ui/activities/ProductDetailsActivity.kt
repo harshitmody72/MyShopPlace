@@ -23,6 +23,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
     // A global variable for product id.
     private var mProductId: String = ""
+    private var mProductOwnerId: String = ""
 
     /**
      * This function is auto created by Android when the Activity Class is created.
@@ -38,16 +39,16 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
                 intent.getStringExtra(Constants.EXTRA_PRODUCT_ID)!!
         }
 
-        var productOwnerId: String = ""
+        // var productOwnerId: String = ""
 
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_OWNER_ID)) {
-            productOwnerId =
+            mProductOwnerId =
                 intent.getStringExtra(Constants.EXTRA_PRODUCT_OWNER_ID)!!
         }
 
         setupActionBar()
 
-        if (FirestoreClass().getCurrentUserID() == productOwnerId) {
+        if (FirestoreClass().getCurrentUserID() == mProductOwnerId) {
             btn_add_to_cart.visibility = View.GONE
             btn_go_to_cart.visibility = View.GONE
         } else {
@@ -82,6 +83,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
         val addToCart = Cart(
             FirestoreClass().getCurrentUserID(),
+            mProductOwnerId,
             mProductId,
             mProductDetails.title,
             mProductDetails.price,
@@ -139,7 +141,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
         )
 
         tv_product_details_title.text = product.title
-        tv_product_details_price.text = "$${product.price}"
+        tv_product_details_price.text = "${product.price} RS"
         tv_product_details_description.text = product.description
         tv_product_details_stock_quantity.text = product.stock_quantity
 

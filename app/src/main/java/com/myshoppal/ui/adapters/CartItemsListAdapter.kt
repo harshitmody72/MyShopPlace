@@ -59,7 +59,7 @@ open class CartItemsListAdapter(
             GlideLoader(context).loadProductPicture(model.image, holder.itemView.iv_cart_item_image)
 
             holder.itemView.tv_cart_item_title.text = model.title
-            holder.itemView.tv_cart_item_price.text = "$${model.price}"
+            holder.itemView.tv_cart_item_price.text = "${model.price} Rs"
             holder.itemView.tv_cart_quantity.text = model.cart_quantity
 
             if (model.cart_quantity == "0") {
